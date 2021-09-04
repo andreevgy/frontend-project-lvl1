@@ -1,9 +1,11 @@
 import runGame from './index.js';
-import randomNumber from './randomNumber';
+import randomNumber from './randomNumber.js';
+
+const description = 'What number is missing in the progression?';
 
 const questionGenerator = () => {
   const startNumber = randomNumber(-100, 100);
-  const progressionNumber = randomNumber(-10, 10);
+  const progressionNumber = randomNumber(1, 10);
   const arrayLength = randomNumber(5, 10);
   const hiddenIndex = randomNumber(0, arrayLength - 1);
   const array = [startNumber];
@@ -22,7 +24,7 @@ const questionGenerator = () => {
   }
   const correctAnswer = array[hiddenIndex].toString();
 
-  return { question, correctAnswer };
+  return { question, correctAnswer, description };
 };
 
 export default () => {

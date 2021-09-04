@@ -6,6 +6,7 @@ export default (questionGenerator) => {
   console.log(`Hello, ${name}!`);
   for (let i = 0; i < 3; i += 1) {
     const gameData = questionGenerator();
+    if (i === 0) console.log(gameData.description);
     console.log(`Question: ${gameData.question}`);
     const answer = readlineSync.question('Your answer: ');
     if (answer !== gameData.correctAnswer) {

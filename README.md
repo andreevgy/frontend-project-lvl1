@@ -10,7 +10,7 @@ Game where you answer if number is even
 ```shell
 brain-even
 ```
-[![asciicast](https://asciinema.org/a/434024.svg)](https://asciinema.org/a/434024)
+[![asciicast](https://asciinema.org/a/434058.svg)](https://asciinema.org/a/434058)
 
 ## brain-calc
 
@@ -19,7 +19,7 @@ Game where you need to solve math questions
 ```shell
 brain-calc
 ```
-[![asciicast](https://asciinema.org/a/434028.svg)](https://asciinema.org/a/434028)
+[![asciicast](https://asciinema.org/a/434059.svg)](https://asciinema.org/a/434059)
 
 ## brain-gcd
 
@@ -28,7 +28,7 @@ Game where you need to find greatest common divisor of two numbers
 ```shell
 brain-gcd
 ```
-[![asciicast](https://asciinema.org/a/434043.svg)](https://asciinema.org/a/434043)
+[![asciicast](https://asciinema.org/a/434060.svg)](https://asciinema.org/a/434060)
 
 ## brain-progression
 
@@ -37,4 +37,4 @@ Game where you need to find empty number in progression
 ```shell
 brain-progression
 ```
-[![asciicast](https://asciinema.org/a/434057.svg)](https://asciinema.org/a/434057)
+[![asciicast](https://asciinema.org/a/434061.svg)](https://asciinema.org/a/434061)

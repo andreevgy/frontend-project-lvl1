@@ -1,5 +1,7 @@
 import runGame from './index.js';
-import randomNumber from './randomNumber';
+import randomNumber from './randomNumber.js';
+
+const description = 'Find the greatest common divisor of given numbers.';
 
 const getCorrectAnswer = (a, b) => {
   let smaller = a < b ? a : b;
@@ -19,7 +21,7 @@ const questionGenerator = () => {
   const question = `${number1} ${number2}`;
   const correctAnswer = getCorrectAnswer(number1, number2).toString();
 
-  return { question, correctAnswer };
+  return { question, correctAnswer, description };
 };
 
 export default () => {
