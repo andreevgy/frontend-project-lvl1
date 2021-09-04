@@ -20,3 +20,12 @@ Game where you need to solve math questions
 brain-calc
 ```
 [![asciicast](https://asciinema.org/a/434028.svg)](https://asciinema.org/a/434028)
+
+## brain-gcd
+
+Game where you need to find greatest common divisor of two numbers
+
+```shell
+brain-gcd
+```
+[![asciicast](https://asciinema.org/a/434043.svg)](https://asciinema.org/a/434043)
