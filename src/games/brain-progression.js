@@ -1,4 +1,4 @@
-import randomNumber from './randomNumber.js';
+import randomNumber from '../randomNumber.js';
 
 const description = 'What number is missing in the progression?';
 

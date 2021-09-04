@@ -1,4 +1,4 @@
-import randomNumber from './randomNumber.js';
+import randomNumber from '../randomNumber.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
