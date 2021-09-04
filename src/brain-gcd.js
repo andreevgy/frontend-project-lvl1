@@ -1,4 +1,5 @@
 import runGame from './index.js';
+import randomNumber from './randomNumber';
 
 const getCorrectAnswer = (a, b) => {
   let smaller = a < b ? a : b;
@@ -13,8 +14,8 @@ const getCorrectAnswer = (a, b) => {
 };
 
 const questionGenerator = () => {
-  const number1 = Math.floor(Math.random() * 100);
-  const number2 = Math.floor(Math.random() * 100);
+  const number1 = randomNumber(0, 100);
+  const number2 = randomNumber(0, 100);
   const question = `${number1} ${number2}`;
   const correctAnswer = getCorrectAnswer(number1, number2).toString();
 

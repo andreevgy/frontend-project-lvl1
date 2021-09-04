@@ -29,3 +29,12 @@ Game where you need to find greatest common divisor of two numbers
 brain-gcd
 ```
 [![asciicast](https://asciinema.org/a/434043.svg)](https://asciinema.org/a/434043)
+
+## brain-progression
+
+Game where you need to find empty number in progression
+
+```shell
+brain-progression
+```
+[![asciicast](https://asciinema.org/a/434057.svg)](https://asciinema.org/a/434057)
