@@ -38,3 +38,12 @@ Game where you need to find empty number in progression
 brain-progression
 ```
 [![asciicast](https://asciinema.org/a/434061.svg)](https://asciinema.org/a/434061)
+
+## brain-prime
+
+Game where you need to answer if number is prime
+
+```shell
+brain-prime
+```
+[![asciicast](https://asciinema.org/a/434063.svg)](https://asciinema.org/a/434063)
