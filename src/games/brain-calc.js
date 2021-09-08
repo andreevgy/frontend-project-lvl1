@@ -20,7 +20,7 @@ const getCorrectAnswer = (a, b, action) => {
 const questionGenerator = () => {
   const number1 = randomNumber(0, 100);
   const number2 = randomNumber(0, 100);
-  const action = actions[randomNumber(0, actions.length)];
+  const action = actions[randomNumber(0, actions.length - 1)];
   const question = `${number1} ${action} ${number2}`;
   const correctAnswer = getCorrectAnswer(number1, number2, action).toString();
 
