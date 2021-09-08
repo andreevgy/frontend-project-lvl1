@@ -14,11 +14,13 @@ const getCorrectAnswer = (a, b) => {
   return smaller;
 };
 
-export default () => {
+const questionGenerator = () => {
   const number1 = randomNumber(0, 100);
   const number2 = randomNumber(0, 100);
   const question = `${number1} ${number2}`;
   const correctAnswer = getCorrectAnswer(number1, number2).toString();
 
-  return { question, correctAnswer, description };
+  return { question, correctAnswer };
 };
+
+export default () => ({ questionGenerator, description });

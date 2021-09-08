@@ -10,9 +10,11 @@ const isPrime = (number) => {
   return true;
 };
 
-export default () => {
+const questionGenerator = () => {
   const number = randomNumber(1, 100);
   const correctAnswer = isPrime(number) ? 'yes' : 'no';
 
-  return { question: number, correctAnswer, description };
+  return { question: number, correctAnswer };
 };
+
+export default () => ({ questionGenerator, description });

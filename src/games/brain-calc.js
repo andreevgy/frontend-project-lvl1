@@ -13,16 +13,18 @@ const getCorrectAnswer = (a, b, action) => {
     case '-':
       return a - b;
     default:
-      return 0;
+      return null;
   }
 };
 
-export default () => {
+const questionGenerator = () => {
   const number1 = randomNumber(0, 100);
   const number2 = randomNumber(0, 100);
-  const action = actions[randomNumber(0, 2)];
+  const action = actions[randomNumber(0, actions.length)];
   const question = `${number1} ${action} ${number2}`;
   const correctAnswer = getCorrectAnswer(number1, number2, action).toString();
 
-  return { question, correctAnswer, description };
+  return { question, correctAnswer };
 };
+
+export default () => ({ description, questionGenerator });

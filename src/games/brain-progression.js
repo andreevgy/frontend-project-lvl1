@@ -11,26 +11,32 @@ const maxProgressionValue = 10;
 const minProgressionLength = 5;
 const maxProgressionLength = 10;
 
-export default () => {
-  const startNumber = randomNumber(minStartNumber, maxStartNumber);
-  const progressionValue = randomNumber(minProgressionValue, maxProgressionValue);
-  const arrayLength = randomNumber(minProgressionLength, maxProgressionLength);
-  const hiddenIndex = randomNumber(0, arrayLength - 1);
-  const array = [startNumber];
-  let question = '';
-  for (let i = 1; i <= arrayLength; i += 1) {
-    const number = array[i - 1] + progressionValue;
-    array.push(number);
+const generateProgression = (firstElement, step, length) => {
+  const progression = [];
+  for (let i = 0; i < length; i += 1) {
+    progression[i] = firstElement + i * step;
   }
-  for (let i = 0; i < array.length; i += 1) {
+  return progression;
+};
+
+const questionGenerator = () => {
+  const startNumber = randomNumber(minStartNumber, maxStartNumber);
+  const step = randomNumber(minProgressionValue, maxProgressionValue);
+  const progressionLength = randomNumber(minProgressionLength, maxProgressionLength);
+  const hiddenIndex = randomNumber(0, progressionLength - 1);
+  const progression = generateProgression(startNumber, step, progressionLength);
+  let question = '';
+  for (let i = 0; i < progressionLength; i += 1) {
     if (i === hiddenIndex) {
       question += '..';
     } else {
-      question += array[i].toString();
+      question += progression[i].toString();
     }
-    question += i === arrayLength ? '' : ' ';
+    question += i === progressionLength ? '' : ' ';
   }
-  const correctAnswer = array[hiddenIndex].toString();
+  const correctAnswer = progression[hiddenIndex].toString();
 
-  return { question, correctAnswer, description };
+  return { question, correctAnswer };
 };
+
+export default () => ({ questionGenerator, description });
