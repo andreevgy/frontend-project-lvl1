@@ -1,8 +1,8 @@
-import randomNumber from '../randomNumber.js';
+import getRandomNumber from '../getRandomNumber.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const getCorrectAnswer = (a, b) => {
+const getGCD = (a, b) => {
   let smaller = a < b ? a : b;
   let bigger = smaller === a ? b : a;
   let left = bigger % smaller;
@@ -14,13 +14,13 @@ const getCorrectAnswer = (a, b) => {
   return smaller;
 };
 
-const questionGenerator = () => {
-  const number1 = randomNumber(0, 100);
-  const number2 = randomNumber(0, 100);
+const generateRoundData = () => {
+  const number1 = getRandomNumber(0, 100);
+  const number2 = getRandomNumber(0, 100);
   const question = `${number1} ${number2}`;
-  const correctAnswer = getCorrectAnswer(number1, number2).toString();
+  const correctAnswer = getGCD(number1, number2).toString();
 
   return { question, correctAnswer };
 };
 
-export default () => ({ questionGenerator, description });
+export default () => ({ generateRoundData, description });

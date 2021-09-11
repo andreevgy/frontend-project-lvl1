@@ -1,4 +1,4 @@
-import randomNumber from '../randomNumber.js';
+import getRandomNumber from '../getRandomNumber.js';
 
 const description = 'What number is missing in the progression?';
 
@@ -19,24 +19,18 @@ const generateProgression = (firstElement, step, length) => {
   return progression;
 };
 
-const questionGenerator = () => {
-  const startNumber = randomNumber(minStartNumber, maxStartNumber);
-  const step = randomNumber(minProgressionValue, maxProgressionValue);
-  const progressionLength = randomNumber(minProgressionLength, maxProgressionLength);
-  const hiddenIndex = randomNumber(0, progressionLength - 1);
+const generateRoundData = () => {
+  const startNumber = getRandomNumber(minStartNumber, maxStartNumber);
+  const step = getRandomNumber(minProgressionValue, maxProgressionValue);
+  const progressionLength = getRandomNumber(minProgressionLength, maxProgressionLength);
+  const hiddenIndex = getRandomNumber(0, progressionLength - 1);
   const progression = generateProgression(startNumber, step, progressionLength);
-  let question = '';
-  for (let i = 0; i < progressionLength; i += 1) {
-    if (i === hiddenIndex) {
-      question += '..';
-    } else {
-      question += progression[i].toString();
-    }
-    question += i === progressionLength ? '' : ' ';
-  }
+  const question = progression
+    .map((number, index) => (index === hiddenIndex ? '..' : number.toString()))
+    .join(' ');
   const correctAnswer = progression[hiddenIndex].toString();
 
   return { question, correctAnswer };
 };
 
-export default () => ({ questionGenerator, description });
+export default () => ({ generateRoundData, description });

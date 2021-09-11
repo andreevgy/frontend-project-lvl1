@@ -9,7 +9,7 @@ export default (gameInit) => {
   const game = gameInit();
   console.log(game.description);
   for (let i = 0; i < numberOfRounds; i += 1) {
-    const roundData = game.questionGenerator();
+    const roundData = game.generateRoundData();
     console.log(`Question: ${roundData.question}`);
     const answer = readlineSync.question('Your answer: ');
     if (answer !== roundData.correctAnswer) {
